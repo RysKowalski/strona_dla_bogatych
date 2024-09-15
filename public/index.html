@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komentarze o graczach</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-container">
+        <h2>Wprowadź hasło</h2>
+        <form id="login-form">
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Zaloguj</button>
+        </form>
+        <p id="error-message" style="color: red; display: none;">Błędne hasło!</p>
+    </div>
+
+    <div id="comments-container" style="display: none;">
+        <h2>Komentarze o graczach</h2>
+        <form id="comment-form">
+            <label for="player">Nazwa gracza:</label>
+            <input type="text" id="player" required>
+
+            <label for="comment">Komentarz:</label>
+            <textarea id="comment" required></textarea>
+
+            <button type="submit">Zapisz komentarz</button>
+        </form>
+
+        <h3>Lista komentarzy:</h3>
+        <ul id="comments-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
