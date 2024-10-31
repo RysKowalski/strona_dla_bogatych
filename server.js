@@ -4,13 +4,53 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 
+
 const app = express();
 const PORT = 3000;
 const commentsFile = path.join(__dirname, 'comments.json');
+const yamlFilePath = path.join(__dirname, 'dane.yaml');
 
 // Middleware do parsowania JSON i serwowania plików statycznych
 app.use(bodyParser.json());
+app.use(bodyParser.text());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Endpoint GET - zwraca zawartość pliku YAML jako string
+app.get('/api', (req, res) => {
+    fs.readFile(yamlFilePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Błąd odczytu pliku:', err); // Log błędu do konsoli
+            return res.status(500).send('Błąd podczas odczytu pliku.');
+        }
+        res.type('text/plain').send(data);
+    });
+});
+
+// Endpoint POST - zapisuje plain text lub obiekt JSON do pliku YAML
+app.post('/api', (req, res) => {
+    let newYamlData;
+
+    // Sprawdź, czy dane są w formacie JSON
+    if (req.is('application/json')) {
+        newYamlData = JSON.stringify(req.body, null, 2); // Konwertuj obiekt JSON na string
+    } else {
+        newYamlData = req.body; // Odbierz dane jako plain text
+    }
+
+    // Upewnij się, że dane są typu string
+    if (typeof newYamlData !== 'string') {
+        return res.status(400).send('Dane muszą być w formacie tekstowym lub JSON.');
+    }
+
+    // Zapisz dane do pliku YAML, nadpisując całą jego zawartość
+    fs.writeFile(yamlFilePath, newYamlData, (err) => {
+        if (err) {
+            console.error('Błąd zapisu pliku:', err); // Log błędu do konsoli
+            return res.status(500).send('Błąd podczas zapisywania do pliku.');
+        }
+        res.send('Dane zostały zapisane.');
+    });
+});
 
 // Przechowuj hasło hashowane (przykład, w rzeczywistości użyj zmiennych środowiskowych lub bezpieczniejszego rozwiązania)
 const storedPasswordHash = '$2a$10$3jkXRm71hotOnBOZMJefwOlCV1eXG4Fo2h0uJxIQFccIFxU0UslUu'; // Przykładowy hash
