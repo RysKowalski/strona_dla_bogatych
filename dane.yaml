@@ -1,4 +1,98 @@
 {
-  "test": "skill issue",
-  "skibidi": "sigma"
+  "points": {
+    "prawa": {
+      "max_points": 0,
+      "points": 0,
+      "sznury_choragwia": {
+        "max_points": 0,
+        "points": 0,
+        "test": {
+          "max_points": 44,
+          "points": 0,
+          "testowy zbior": {
+            "max_points": 0,
+            "points": 0
+          }
+        }
+      }
+    }
+  },
+  "prawa": {
+    "chances": [
+      69.44444444444446,
+      81.98302469135804,
+      83.33333333333334,
+      80.65459605052585,
+      200.69444444444449,
+      141.66666666666669,
+      98.37962962962965,
+      167.24537037037038,
+      69.44444444444446,
+      57.87037037037038
+    ],
+    "data": [
+      "Mam szczerą wolę, całym życiem pełnić służbę bogu i Polsce, nieść chętną pomoc bliźnim i być posłusznym prawu harcerskiemu.",
+      "1. Harcerz służy Bogu i Polsce i sumiennie spełnia swoje obowiązki.",
+      "2. Na słowie harcerza polegaj jak na Zawiszy.",
+      "3. Harcerz jest pożyteczny i niesie pomoc bliźnim.",
+      "4. Harcerz w każdym widzi bliźniego, a za brata uważa każdego innego harcerza.",
+      "5. Harcerz postępuje po rycersku.",
+      "6. Harcerz miłuje przyrodę i stara się ją poznać.",
+      "7. Harcerz jest karny i posłuszny rodzicom i wszystkim swoim przełożonym.",
+      "8. Harcerz jest zawsze pogodny.",
+      "9. Harcerz jest oszczędny i ofiarny.",
+      "10. Harcerz jest czysty w myśli, mowie i uczynku, nie pali tytoniu i nie pije napojów alkoholowych."
+    ],
+    "names": [
+      "przyrzeczenie",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  "sznury_choragwia": {
+    "chances": [
+      118.05555555555557,
+      508.9494616293956,
+      197.44245113168728,
+      69.44444444444446,
+      561.3627097279974,
+      118.05555555555557,
+      69.44444444444446,
+      167.2453703703704,
+      141.66666666666669,
+      83.33333333333334
+    ],
+    "data": [
+      "brązowy spod ramienia",
+      "zielony spod ramienia",
+      "granatowy spod ramienia",
+      "srebrny z ramienia",
+      "srebrny spod ramienia",
+      "srebrny spod kołnierza",
+      "granatowy z ramienia",
+      "złoty z ramienia",
+      "złoty spod ramienia",
+      "złoty spod kołnierza"
+    ],
+    "names": [
+      "zastępowy",
+      "przyboczny",
+      "drużynowy",
+      "hufcowy",
+      "zastępca hufcowego",
+      "członkowie komendy hufca",
+      "szczepowy",
+      "komendant chorągwi",
+      "zastępca komendanta chorągwi",
+      "członkowie komendy chorągwi"
+    ]
+  }
 }
